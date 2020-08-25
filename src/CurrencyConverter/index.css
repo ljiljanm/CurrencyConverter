@@ -1,0 +1,118 @@
+body {
+  background: #222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+}
+.main {
+  text-align: center;
+}
+h1 {
+  color: white;
+}
+
+.container {
+  margin: auto;
+  width: 650px;
+  border: 1px solid #885;
+  height: 270px;
+  /* background-color: white; */
+  background-image: linear-gradient(white, #eee, #bbb);
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: #333 2px 2px 3px;
+}
+
+.select {
+  /* border: 1px dotted #aaa; */
+  padding-bottom: 35px;
+}
+.select select {
+  width: 170px;
+  background: #f5f5fa;
+  height: 30px;
+  font-size: 17px;
+  border-radius: 4px;
+  outline: 0;
+}
+
+.converter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px dashed #999; */
+  height: 80px;
+}
+.left {
+  width: 100%;
+}
+.right {
+  width: 100%;
+}
+.center {
+  width: 5%;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 7px;
+}
+.icon {
+  background-repeat: no-repeat;
+  background-size: 25px 18px;
+  padding-left: 30px;
+  text-align: left;
+  background-position: 2px 2px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.aud {
+  background-image: url("./components/aud.png");
+}
+
+.eur {
+  background-image: url("./components/eur.png");
+}
+.usd {
+  background-image: url("./components/usd.png");
+}
+.cad {
+  background-image: url("./components/cad.png");
+}
+
+.jpy {
+  background-image: url("./components/jpy.png");
+}
+.gbp {
+  background-image: url("./components/gbp.png");
+}
+.rsd {
+  background-image: url("./components/rsd.png");
+}
+.bam {
+  background-image: url("./components/bam.png");
+}
+.input {
+  display: flex;
+  flex-direction: row;
+}
+.input input {
+  width: 230px;
+}
+.sign {
+  padding: 3px 7px;
+  background: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.rate {
+  text-align: left;
+}
+
+.signature {
+  text-align: right;
+  text-transform: capitalize;
+  font-size: 11px;
+  color: #77a;
+  padding-top: 25px;
+}
