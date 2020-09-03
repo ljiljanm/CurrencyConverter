@@ -35,9 +35,10 @@ class CurrencyConverter extends React.Component {
   fetchData = async () => {
     const { currencies } = this.state;
     let rates = {};
+    // "http://data.fixer.io/api/latest?access_key=443ef2f31753d239068100ede5ebbbbb&symbols=USD,AUD,CAD,JPY,GBP,BAM,RSD";
     try {
-      const url =
-        "http://data.fixer.io/api/latest?access_key=443ef2f31753d239068100ede5ebbbbb&symbols=USD,AUD,CAD,JPY,GBP,BAM,RSD";
+      //
+      const url = "https://api.exchangerate.host/latest";
       const response = await fetch(url);
       const data = await response.json();
       rates = data.rates;
@@ -45,11 +46,13 @@ class CurrencyConverter extends React.Component {
       console.error("there's an error", error);
       rates = JSON.parse(localStorage.getItem("rates"));
     }
-
+    console.log(rates);
     localStorage.setItem("rates", JSON.stringify(rates));
     for (let key in rates) {
       const ind = currencies.findIndex(item => item.code === key);
-      currencies[ind].rate = rates[key];
+      if (ind !== -1) {
+        currencies[ind].rate = rates[key];
+      }
     }
     this.setState({ currencies });
   };
@@ -63,7 +66,10 @@ class CurrencyConverter extends React.Component {
         <h1>CURRENCY CONVERTER</h1>
         <div className="container">
           <div className="select">
-            <SelectCurrency currencies={this.state.currencies} change={this.selectHandler} />
+            <SelectCurrency
+              currencies={this.state.currencies}
+              change={this.selectHandler}
+            />
           </div>
           <Converter
             leftCurr={this.state.leftCurr}
@@ -74,7 +80,9 @@ class CurrencyConverter extends React.Component {
           />
           <div className="rate">
             <strong>Exchange rate: </strong>1 {this.state.leftCurr.code} ={" "}
-            {this.state.rightCurr.rate ? this.state.rightCurr.rate.toFixed(4) : null}{" "}
+            {this.state.rightCurr.rate
+              ? this.state.rightCurr.rate.toFixed(4)
+              : null}{" "}
             {this.state.rightCurr.code}{" "}
           </div>
           <div className="signature">By Ljiljan Maksimovic</div>

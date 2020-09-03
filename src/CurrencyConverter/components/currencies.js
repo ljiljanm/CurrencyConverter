@@ -31,4 +31,24 @@ export const currencies = [
     name: "Serbian Dinar",
     code: "RSD",
   },
+  {
+    name: "Chinese Yuan",
+    code: "CNY",
+  },
+  {
+    name: "Russian Ruble",
+    code: "RUB",
+  },
+  {
+    name: "Croatian Kuna",
+    code: "HRK",
+  },
+  {
+    name: "Bulagarian Lev",
+    code: "BGN",
+  },
+  {
+    name: "Hungarian Forint",
+    code: "HUF",
+  },
 ];
